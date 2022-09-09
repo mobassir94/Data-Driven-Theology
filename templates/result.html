@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Prediction</title>
+    <link rel="stylesheet" type="type/css" href="{{url_for('static', filename='css/style.css')}}" </head>
+
+    <body style="background-color:#808080;>
+	
+		
+        <header>
+            <div class="container">
+                <div id="brandname">
+                    <h2 style="text-align: center;background-color:#D3D3D3;">Multilingual Data Driven Theology</h2>
+                </div>
+                <h1 style="color:#000080;">Asymmetric Semantic Search Results :  </h1>
+            </div>
+        </header>
+
+        <p style="color:blue;font-size:20;text-align:center;"></p>
+        <h2 style="text-align: center;background-color:khaki;">Top prediction pairs from Holy Quran and Old Testament </h2>
+        <div class="results">
+             {% for index,row in prediction.iterrows() %}
+     		 <p>
+     		 
+     		 <span style="color:#800000;">Surah(Quran) : </span>{{(row['q_Surah']) |int }} 
+     		 
+     		 <span style="color:#800000;">Ayat(Quran) : </span> {{(row['q_Ayat']) |int }}<br/>
+     		 
+    
+     		 <span style="color:#800000;">Surah Name(Quran) :</span> {{ row['q_Name'] }}<br/> 
+     		 
+     		 <span style="color:#800000;">Verse(Quran) : </span> {{ row['q_Verse'] }}<br/> 
+     		 
+     		 
+     		 <br/> <span style="color:blue;">Text(old testament): </span> {{ row['t_text'] }}<br/> 
+     		 
+     		 <span style="color:blue;">Citation(old testament) :</span> {{ row['t_citation'] }}<br/> 
+     		 
+     		 <span style="color:blue;">Book(old testament) :</span> {{ row['t_book'] }}<br/>
+     		 
+     		 <span style="color:blue;">Chapter(old testament): </span> {{ row['t_chapter'] }}
+     		 
+     		 <span style="color:blue;">Verse(old testament): </span> {{ row['t_verse'] }}<br/> <br/> 
+     		 
+   
+     		 <span style="color:khaki;">Prediction Score (LASER) : </span>{{row['Score']}} <br/>
+     		<span style="color:khaki;">Verse Pair Prediction Score : </span>{{row['similarity_score']}} percent <br/><br/>
+     		 
+     		 </p>
+	     {% endfor %}
+	     
+     
+        </div>
+
+
+    </body>
+
+</html>
