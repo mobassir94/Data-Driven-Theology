@@ -26,3 +26,30 @@ English only
 
 4. ENSEMBLE : we pick the verses pairs from each dataframe (output of each model discussed in step 3) with highest confident score (we take the decision based on histogram score distribution), then we merge all the filtered dataset and drop duplicates except first. then we sort the final filtered dataset and save that dataset for next level research. check the ensemble notebook called [find similar verses between quran and bible](https://github.com/mobassir94/Data-Driven-Theology/blob/main/Quran%20vs%20Bible/find-similar-verses-between-quran-and-bible.ipynb)  for better understanding.
 
+# limitations/ cautions
+
+1. This is not a question answering system,hence it won't give explicit answer for questions (Question-Answering System needs labeled dataset,which is currently 
+missing for Holy Quran and Old Testament.)
+
+2. The system tries to predict closest verses from Quran or Torah  for your query using some mathematical/statistical process. So predicted answer won't be always right.
+
+3. If the user query contains spelling mistake or incorrect words then predictions of the system is expected to be wrong for most of the times.
+
+4. if the users query contains irrelevant words and doesn't come closer to any verse in terms of semantic similarity then the system will provide wrong results.
+
+5. Most of the times Pairwise Euclidean metric provides better results than dot product metric.
+
+6. This system can't consider the domain of the Query.
+
+7. Higher Prediction Score indicates higher similarity,if prediction score for your query is small,then try to use different keywords/queries instead
+
+8. The meaning of selected verse pairs won't be same/similar for most of the times but mostly they are expected to contain same or similar words.
+
+9. Predicted results might not always give you appropriate results for your input query,but most of the times it will try to output something that contains words or
+keywords that are very close to your input query.
+
+10. This is a zero Shot learning approach because we are lacking labeled dataset for this task,to improve performance of this system,one need to further finetune LASER
+and improve the Ensemble Pipeline
+
+
+
