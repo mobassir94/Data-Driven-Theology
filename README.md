@@ -52,4 +52,9 @@ keywords that are very close to your input query.
 and improve the Ensemble Pipeline
 
 
+# Acknowledgements
+
+1. Apsis Solutions Ltd.
+2. bengali.ai
+
 
