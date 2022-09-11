@@ -84,7 +84,7 @@ demo video tutorial is available here -> https://www.youtube.com/watch?v=sSnsOeP
 # Few Words
 
 To the best of our knowledge this is the first approach ever taken for finding similar verse pairs among different religious scriptures using cross lingual data driven theological approach.This is a research project that was developed and shared publicly instantly without having the mission or vision of publishing it or updated version of it in any journal or conference because we don't care about having name on any research paper and Allah is The Most Watcher On us In Every Moments Of our Breath.
-here are few ideas that we would like to share for you to take this project even further and if you are doing similar research project,you can let us know and we are ready to help as much as we can WITHOUT NEEDING TO HAVE OUR NAMES IN ANY RESEARCH PAPER.
+in case you are walking in the same or similar research direction, here are few ideas that we would like to share for you to take this project even further and if you are doing similar research project,you can let us know and we are ready to help as much as we can in our free time WITHOUT NEEDING TO HAVE OUR NAMES IN ANY RESEARCH PAPER.
 
 idea1 -> we used single english translated version of Holy Quran and Torah, try to merge translations from different sources like sahih international,al bayan etc. more translated verses created better diversity and should help improve ensemble pipeline.
 
