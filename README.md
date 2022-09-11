@@ -1,6 +1,5 @@
 # Data-Driven-Theology
 
-# Motivation
 
 The main aim of this repository is to find similarities between different religious scriptures and make AI driven theological similarity search engine app. specially for Holy Quran and Bible.
 
@@ -8,23 +7,16 @@ column names starting with t_ means those columns belongs to Torah and q_ means 
 
 the final processed similarity pair dataset is public here for further research -> https://www.kaggle.com/datasets/mobassir/quran-vs-bible
 
-# Supported Input Languages
 
-Afrikaans, Albanian, Amharic, Arabic, Armenian, Aymara, Azerbaijani, Basque, Belarusian, Bengali, Berber languages, Bosnian, Breton, Bulgarian, Burmese, Catalan, Central/Kadazan Dusun, Central Khmer, Chavacano, Chinese, Coastal Kadazan, Cornish, Croatian, Czech, Danish, Dutch, Eastern Mari, English, Esperanto, Estonian, Finnish, French, Galician, Georgian, German, Greek, Hausa, Hebrew, Hindi, Hungarian, Icelandic, Ido, Indonesian, Interlingua, Interlingue, Irish, Italian, Japanese, Kabyle, Kazakh, Korean, Kurdish, Latvian, Latin, Lingua Franca Nova, Lithuanian, Low German/Saxon, Macedonian, Malagasy, Malay, Malayalam, Maldivian (Divehi), Marathi, Norwegian (Bokmål), Occitan, Persian (Farsi), Polish, Portuguese, Romanian, Russian, Serbian, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Swahili, Swedish, Tagalog, Tajik, Tamil, Tatar, Telugu, Thai, Turkish, Uighur, Ukrainian, Urdu, Uzbek, Vietnamese, Wu Chinese and Yue Chinese.
+# Motivation
 
-# Supported Output Languages
+Finding Similar Verses among different religious scriptures is very important so that we all can follow at least what is common religious laws that we all need to follow properly. but to the best of our knowledge even in today's age No such data driven research project has been developed yet for public use (At least we couldn't find similar work that is publicly available). For that reason,Multilingual Data Driven theology project has been created here as a very basic step to find out which verses are there in the Quran and which are in Old testament that matches with each other and also closest to users Query(in terms of word similarity/not verse similarity always, we are yet to figure out verse similarity (in terms of meaning) as it is a very complex problem that needs to be solved).
 
-English only
+And due to the absence of this search engine, even in today's age sectarian hatred keeps on increasing and IMHO it is like "Drinking the poison and expecting someone else to die". This is why this project is undertaken and hoping to mitigate sectarian hatred as much as we can.The aim of this project is to create a search engine that will take input queries for Holy Quran and Bible(Torah) from any language like Arabic, Hindi, Bengali, English etc. (It also supports code mixed language input i.e. mix of English and Arabic input.) and Provide output in  English language that shows top verse pairs among Quran and Bible. This is an "asymmetric semantic similarity search" problem.Meaning, you usually have a short question (like a question or some keywords) and you want to find a long paragraph answering the Question/Query.
 
-# Solution / Pipeline
 
-1. from [bibleverses](https://www.kaggle.com/datasets/phyred23/bibleverses) dataset we first separate old testament
+There are a few things to keep in mind when using the project in its current state.For example and they are discussed in very next section.
 
-2. for each verse in old testament we compare similarity of each and every verse of the Holy Quran.
-
-3. for [Finding Similar Verses between Quran and Torah](https://github.com/mobassir94/Data-Driven-Theology/tree/main/Quran%20vs%20Bible) we used popular [SentenceTransformers](https://www.sbert.net/) models and they are all-MiniLM-L6-v2,msmarco-distilbert-base-tas-b,all-mpnet-base-v2,all-MiniLM-L12-v2 and google's [Universal Sentence Encoder Large](https://tfhub.dev/google/universal-sentence-encoder-large/5) model. (NOTE : we used different data processing with all-MiniLM-L12-v2 model).
-
-4. ENSEMBLE : we pick the verses pairs from each dataframe (output of each model discussed in step 3) with highest confident score (we take the decision based on histogram score distribution), then we merge all the filtered dataset and drop duplicates except first. then we sort the final filtered dataset and save that dataset for next level research. check the ensemble notebook called [find similar verses between quran and bible](https://github.com/mobassir94/Data-Driven-Theology/blob/main/Quran%20vs%20Bible/find-similar-verses-between-quran-and-bible.ipynb)  for better understanding.
 
 # limitations/ cautions
 
@@ -50,6 +42,26 @@ keywords that are very close to your input query.
 
 10. This is a zero Shot learning approach because we are lacking labeled dataset for this task,to improve performance of this system,one need to further finetune LASER
 and improve the Ensemble Pipeline
+
+
+
+# Supported Input Languages
+
+Afrikaans, Albanian, Amharic, Arabic, Armenian, Aymara, Azerbaijani, Basque, Belarusian, Bengali, Berber languages, Bosnian, Breton, Bulgarian, Burmese, Catalan, Central/Kadazan Dusun, Central Khmer, Chavacano, Chinese, Coastal Kadazan, Cornish, Croatian, Czech, Danish, Dutch, Eastern Mari, English, Esperanto, Estonian, Finnish, French, Galician, Georgian, German, Greek, Hausa, Hebrew, Hindi, Hungarian, Icelandic, Ido, Indonesian, Interlingua, Interlingue, Irish, Italian, Japanese, Kabyle, Kazakh, Korean, Kurdish, Latvian, Latin, Lingua Franca Nova, Lithuanian, Low German/Saxon, Macedonian, Malagasy, Malay, Malayalam, Maldivian (Divehi), Marathi, Norwegian (Bokmål), Occitan, Persian (Farsi), Polish, Portuguese, Romanian, Russian, Serbian, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Swahili, Swedish, Tagalog, Tajik, Tamil, Tatar, Telugu, Thai, Turkish, Uighur, Ukrainian, Urdu, Uzbek, Vietnamese, Wu Chinese and Yue Chinese.
+
+# Supported Output Languages
+
+English only
+
+# Solution / Pipeline
+
+1. from [bibleverses](https://www.kaggle.com/datasets/phyred23/bibleverses) dataset we first separate old testament
+
+2. for each verse in old testament we compare similarity of each and every verse of the Holy Quran.
+
+3. for [Finding Similar Verses between Quran and Torah](https://github.com/mobassir94/Data-Driven-Theology/tree/main/Quran%20vs%20Bible) we used popular [SentenceTransformers](https://www.sbert.net/) models and they are all-MiniLM-L6-v2,msmarco-distilbert-base-tas-b,all-mpnet-base-v2,all-MiniLM-L12-v2 and google's [Universal Sentence Encoder Large](https://tfhub.dev/google/universal-sentence-encoder-large/5) model. (NOTE : we used different data processing with all-MiniLM-L12-v2 model).
+
+4. ENSEMBLE : we pick the verses pairs from each dataframe (output of each model discussed in step 3) with highest confident score (we take the decision based on histogram score distribution), then we merge all the filtered dataset and drop duplicates except first. then we sort the final filtered dataset and save that dataset for next level research. check the ensemble notebook called [find similar verses between quran and bible](https://github.com/mobassir94/Data-Driven-Theology/blob/main/Quran%20vs%20Bible/find-similar-verses-between-quran-and-bible.ipynb)  for better understanding.
 
 
 # Acknowledgements
