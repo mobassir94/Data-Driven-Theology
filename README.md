@@ -67,6 +67,8 @@ English only
 
 6. we convert users queries into Multilingual Laser embedding/Query Embedding and find similarity with Corpus embedding using l2 distance or dot product
 
+[COLAB DEMO](https://github.com/mobassir94/Data-Driven-Theology/blob/main/Quran%20vs%20Bible/Inference_Multilingual_Data_Driven_Theology.ipynb)
+
 # How to install the app?
 
 1. go to terminal and cd to the root directory of this project,then
