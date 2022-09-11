@@ -63,6 +63,21 @@ English only
 
 4. ENSEMBLE : we pick the verses pairs from each dataframe (output of each model discussed in step 3) with highest confident score (we take the decision based on histogram score distribution), then we merge all the filtered dataset and drop duplicates except first. then we sort the final filtered dataset and save that dataset for next level research. check the ensemble notebook called [find similar verses between quran and bible](https://github.com/mobassir94/Data-Driven-Theology/blob/main/Quran%20vs%20Bible/find-similar-verses-between-quran-and-bible.ipynb)  for better understanding.
 
+5. we use final ensembled dataset (verses pairs) for creating Multilingual Laser embedding/Corpus embedding.
+
+6. we convert users queries into Multilingual Laser embedding/Query Embedding and find similarity with Corpus embedding using l2 distance or dot product
+
+# How to install the app?
+
+1. go to terminal and cd to the root directory of this project,then
+
+2. !pip install -r requirements.txt (make sure no error occured) then,
+
+3. python app.py
+
+4. Now,go to browser and hit -> http://127.0.0.1:33507/
+
+demo video tutorial is available here -> https://www.youtube.com/watch?v=sSnsOePvy24&t=12s
 
 # Acknowledgements
 
