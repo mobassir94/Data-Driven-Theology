@@ -81,6 +81,12 @@ English only
 
 demo video tutorial is available here -> https://www.youtube.com/watch?v=sSnsOePvy24&t=12s
 
+# References
+
+1. https://arxiv.org/pdf/1812.10464v2.pdf
+2. https://www.sbert.net/
+3. https://github.com/mobassir94/Multilingual-NLP-for-Islamic-Theology/blob/main/README.md
+
 # Acknowledgements
 
 1. Apsis Solutions Ltd.
