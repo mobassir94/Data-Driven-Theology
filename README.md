@@ -103,6 +103,7 @@ idea 6 -> extend this research for other religious scriptures as well and observ
 
 idea 7 -> maybe models pretrained only on religious scriptures will do much better job? If You Never Try You'll Never Know. 
 
+idea 8 -> Replace dot product with [xSIM](https://github.com/facebookresearch/LASER/blob/main/source/xsim.py#L33)
 # References
 
 1. https://arxiv.org/pdf/1812.10464v2.pdf
